@@ -1,120 +1,62 @@
-# 🔊 Noise Level Monitor & Controller
+# Noise Level Monitor & Controller
 
-A real-time, Python-powered application to tame the chaos of your acoustic jungle. Designed for classrooms, offices, studios, or anywhere silence is golden (or noise is a monster). This project lets you *monitor*, *visualize*, and *control* your system’s audio output based on environmental noise levels. Because your ears deserve better.
+A real-time application designed for environmental acoustic management in settings such as classrooms, offices, and studios. This system monitors, visualizes, and controls audio output based on detected ambient noise levels.
 
----
+## Project Overview
 
-## 🧠 Project Overview
+The Noise Level Monitor & Controller is a Python-based system integrated with an ESP32 microcontroller. It receives real-time noise data from a microphone sensor and analyzes it to manage the acoustic environment effectively.
 
-This project is a comprehensive **Noise Level Monitor & Controller** application, developed entirely in **Python** and designed for **real-time acoustic environment management**.
+### Key Features
 
-Leveraging an **ESP32 microcontroller** with a **microphone sensor**, the application continuously receives and analyzes ambient noise data via a **serial connection**.
+- **Real-time Monitoring**: Continuous tracking of noise levels via serial communication with an ESP32.
+- **Data Visualization**: Live plotting of noise trends and system volume using Matplotlib and Tkinter.
+- **Automated Control**: Dynamic adjustment of system audio output in response to environmental noise.
+- **Threshold Management**: Configurable sensitivity and alert systems for maintaining desired noise levels.
+- **Data Logging**: Export capabilities for historical noise data analysis in CSV format.
+- **System Integration**: Low-level audio management (primarily for Windows via Pycaw).
 
-It features a modern **graphical user interface (GUI)** built with **Tkinter**, offering live visualization of noise and system volume trends through **embedded Matplotlib plots**.
+## Technical Architecture
 
-The system can automatically adjust the computer’s **audio output** in response to changing noise levels, with **customizable sensitivity**, **thresholds**, and **calibration routines** for different environments.
+- **Hardware**: ESP32 microcontroller with a compatible microphone sensor.
+- **Software Core**: Python 3 code handling data ingestion and logic.
+- **User Interface**: Tkinter-based GUI for real-time interaction.
+- **Serial Communication**: PySerial for robust data transfer between hardware and software.
 
-Users benefit from advanced features such as:
+## Installation
 
-- Configurable alerts
-- Data logging and export options
-- Preset management
+### Repository Setup
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/Mrudula-itsjuzme/noise-monitor-controller.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd noise-monitor-controller
+   ```
 
-This makes the tool adaptable for **classrooms, offices, studios**, or any setting where **sound control is essential**.
-
-The application integrates:
-
-- Hardware interfacing
-- Real-time data processing
-- User-friendly controls
-- System-level audio management
-
-All within a single, robust Python program.
-
----
-
-## 🎯 Features
-
-- 📡 Real-time noise monitoring via ESP32 + microphone
-- 📈 Live noise and system volume graphs (Tkinter + Matplotlib)
-- 🔧 Auto-adjusts system volume based on detected noise levels
-- ⚙️ Customizable sensitivity, thresholds, and environment presets
-- 🚨 Alert system for excessive noise
-- 📝 Data logging & CSV export support
-- 🎛️ Preset management for fast environment switching
-- 🔌 USB Serial communication with ESP32
-- 🖥️ System-level audio control via Pycaw (Windows)
-
----
-
-## 🛠️ Tech Stack
-
-- **Python** (core application logic)
-- **Tkinter** (GUI framework)
-- **Matplotlib** (live data plots)
-- **PySerial** (serial communication)
-- **Pycaw** (audio control on Windows)
-- **ESP32** with microphone sensor (hardware)
-
----
-
-## 🧪 How It Works
-
-1. **ESP32** reads noise levels from a mic sensor.
-2. Sends values over serial to the Python app.
-3. The GUI displays real-time graphs of noise and volume.
-4. The system volume adjusts automatically based on noise input.
-5. Alerts are triggered if noise breaches thresholds.
-6. Data is logged for future analysis or compliance.
-
----
-
-## 📦 Installation
-
-### Clone the Repo
-```bash
-git clone https://github.com/your-username/noise-monitor-controller.git
-cd noise-monitor-controller
-```
-
-### Install Requirements
+### Dependency Installation
+Install the required Python packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the App
-Make sure your ESP32 is connected and run:
+### Execution
+Connect the ESP32 via USB and run the application:
 ```bash
 python app.py
 ```
 
----
+## Application Calibration
 
-## 🧩 Calibration & Presets
+Access the Settings panel in the GUI to:
+- Define noise sensitivity levels.
+- Set custom threshold triggers for alerts.
+- Manage room-specific presets (e.g., Library, Studio, Classroom).
+- Perform recalibration based on current ambient noise.
 
-Navigate to the **Settings** panel within the GUI to:
+## Future Roadmap
 
-- Adjust noise sensitivity
-- Set custom thresholds
-- Create room-specific presets (e.g., “Classroom,” “Studio,” “Library”)
-- Recalibrate based on ambient levels
-
----
-
-## 🌍 Ideal Use Cases
-
-- 📚 **Classrooms** – Enforce noise discipline
-- 🎧 **Studios** – Prevent recording disturbances
-- 🧘 **Meditation Rooms** – Zen vibes only
-- 🏢 **Open Offices** – Keep chatter in check
-
----
-
-## 💡 Future Improvements
-
-- 📲 Mobile App Companion (remote control!)
-- ☁️ Cloud-based analytics and noise reporting
-- 🧠 ML models to classify types of noise (speech, traffic, etc.)
-- 🌐 Cross-platform system volume support (Linux & Mac)
-
----
+- Development of a mobile companion application for remote monitoring.
+- Implementation of cloud-based analytics for long-term noise reporting.
+- Integration of machine learning models for noise classification (e.g., speech vs. background traffic).
+- Expansion of system volume control support to Linux and macOS environments.
