@@ -16,9 +16,9 @@ from datetime import datetime
 import pygame
 
 # Set the correct COM port (Change as needed)
-SERIAL_PORT = "COM3"  # Windows (Check in Arduino IDE)
+SERIAL_PORT = os.getenv("NOISE_MONITOR_SERIAL_PORT", "COM3")  # Override via env
 # SERIAL_PORT = "/dev/ttyUSB0"  # Linux/Mac
-BAUD_RATE = 115200
+BAUD_RATE = int(os.getenv("NOISE_MONITOR_BAUD", "115200"))
 
 # Global variables
 running = True
@@ -28,7 +28,7 @@ noise_min = 0
 noise_max = 100  # Will be adjusted dynamically
 threshold_crossed = False
 threshold_time = 0
-config_file = "noise_config.json"
+config_file = os.getenv("NOISE_MONITOR_CONFIG", "noise_config.json")
 
 # Initialize volume control
 try:
