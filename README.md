@@ -1,62 +1,99 @@
-# Noise Level Monitor & Controller
+# Noise Level Monitor and Controller
 
-A real-time application designed for environmental acoustic management in settings such as classrooms, offices, and studios. This system monitors, visualizes, and controls audio output based on detected ambient noise levels.
+A real-time noise-monitoring and acoustic-control application using Python, ESP32 sensor input, serial communication, and a desktop GUI.
 
-## Project Overview
+The project is designed for environments such as classrooms, offices, libraries, and studios where noise levels need to be monitored or regulated.
 
-The Noise Level Monitor & Controller is a Python-based system integrated with an ESP32 microcontroller. It receives real-time noise data from a microphone sensor and analyzes it to manage the acoustic environment effectively.
+---
 
-### Key Features
+## Problem statement
 
-- **Real-time Monitoring**: Continuous tracking of noise levels via serial communication with an ESP32.
-- **Data Visualization**: Live plotting of noise trends and system volume using Matplotlib and Tkinter.
-- **Automated Control**: Dynamic adjustment of system audio output in response to environmental noise.
-- **Threshold Management**: Configurable sensitivity and alert systems for maintaining desired noise levels.
-- **Data Logging**: Export capabilities for historical noise data analysis in CSV format.
-- **System Integration**: Low-level audio management (primarily for Windows via Pycaw).
+Ambient noise can affect concentration, comfort, communication, and productivity. Manual monitoring is unreliable, especially in shared spaces.
 
-## Technical Architecture
+This project reads noise data from hardware sensors, visualizes it in real time, and supports threshold-based control or alerts.
 
-- **Hardware**: ESP32 microcontroller with a compatible microphone sensor.
-- **Software Core**: Python 3 code handling data ingestion and logic.
-- **User Interface**: Tkinter-based GUI for real-time interaction.
-- **Serial Communication**: PySerial for robust data transfer between hardware and software.
+---
 
-## Installation
+## Features
 
-### Repository Setup
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/Mrudula-itsjuzme/noise-monitor-controller.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd noise-monitor-controller
-   ```
+- real-time noise-level monitoring
+- ESP32 microcontroller integration
+- microphone-sensor data input
+- serial communication with Python
+- Tkinter desktop GUI
+- live Matplotlib plots
+- threshold-based alerts
+- CSV logging for historical analysis
+- Windows system-volume control through Pycaw
 
-### Dependency Installation
-Install the required Python packages:
-```bash
-pip install -r requirements.txt
+---
+
+## System overview
+
+```text
+Microphone Sensor
+       ↓
+ESP32
+       ↓
+Serial Communication
+       ↓
+Python Backend
+       ↓
+Tkinter Dashboard
+       ↓
+Visualization + Alerts + Control
 ```
 
-### Execution
-Connect the ESP32 via USB and run the application:
+---
+
+## Quick start
+
 ```bash
+git clone https://github.com/Mrudula-itsjuzme/noise-regulation.git
+cd noise-regulation
+
+pip install -r requirements.txt
 python app.py
 ```
 
-## Application Calibration
+Before running, connect the ESP32 through USB and confirm the correct serial port is configured in the application.
 
-Access the Settings panel in the GUI to:
-- Define noise sensitivity levels.
-- Set custom threshold triggers for alerts.
-- Manage room-specific presets (e.g., Library, Studio, Classroom).
-- Perform recalibration based on current ambient noise.
+---
 
-## Future Roadmap
+## Calibration
 
-- Development of a mobile companion application for remote monitoring.
-- Implementation of cloud-based analytics for long-term noise reporting.
-- Integration of machine learning models for noise classification (e.g., speech vs. background traffic).
-- Expansion of system volume control support to Linux and macOS environments.
+Use the settings panel to configure:
+
+- noise sensitivity
+- custom threshold triggers
+- room presets such as library, studio, or classroom
+- recalibration based on current ambient noise
+
+---
+
+## Tech stack
+
+- Python
+- ESP32
+- PySerial
+- Tkinter
+- Matplotlib
+- Pycaw
+- CSV logging
+
+---
+
+## Future improvements
+
+- add screenshots of the GUI
+- add ESP32 wiring diagram
+- support Linux and macOS audio control
+- add cloud-based long-term reporting
+- classify noise types such as speech, traffic, and background hum
+- add mobile dashboard support
+
+---
+
+## Author
+
+Built by [Pedamallu Sai Mrudula](https://github.com/Mrudula-itsjuzme) as part of an IoT, automation, and environmental-monitoring portfolio.
