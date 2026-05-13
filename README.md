@@ -6,6 +6,19 @@ The project is designed for environments such as classrooms, offices, libraries,
 
 ---
 
+## Project links and evidence
+
+| Item | Link / Note |
+|---|---|
+| Repository | https://github.com/Mrudula-itsjuzme/noise-regulation |
+| Paper / reference | Applied IoT/environmental-monitoring project; no paper attached |
+| Demo video | Not uploaded yet |
+| Deployment | Local desktop + ESP32 workflow; no hosted deployment |
+| Dataset note | Uses real-time microphone/noise readings from ESP32; CSV logging is supported for historical analysis |
+| Result screenshots | Add GUI screenshots, serial-output screenshots, and ESP32 wiring images under `docs/` or `screenshots/` |
+
+---
+
 ## Problem statement
 
 Ambient noise can affect concentration, comfort, communication, and productivity. Manual monitoring is unreliable, especially in shared spaces.
